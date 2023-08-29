@@ -10,7 +10,7 @@ const serverlessConfiguration: AWS = {
     name: 'aws',
     runtime: 'nodejs16.x',
     region: 'us-east-1',
-    // profile: 'serverless-user',
+    profile: 'serverless-user',
     // memorySize: 512,
     // stage: `${opt:stage, 'dev'}`,
     // timeout: 30,
