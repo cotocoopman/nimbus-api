@@ -1,5 +1,6 @@
 import type { AWS } from '@serverless/typescript'
 import functions from '@resources/functions'
+import cognito from '@resources/cognito'
 
 const serverlessConfiguration: AWS = {
   service: 'serverless-template-ts',
@@ -26,6 +27,11 @@ const serverlessConfiguration: AWS = {
             Effect: 'Allow',
             Action: [
               'lambda:InvokeFunction',
+              'cognito-idp:CreateUserPool',
+              'cognito-idp:CreateUserPoolClient',
+              'cognito-idp:DeleteUserPool',
+              'cognito-idp:DeleteUserPoolClient',
+
               // 'dynamodb:DescribeTable',
               // 'dynamodb:Query',
               // 'dynamodb:Scan',
@@ -89,7 +95,10 @@ const serverlessConfiguration: AWS = {
       concurrency: 10,
     },
   },
-  functions
+  functions,
+  resources: {
+    ...cognito
+  }
 }
 
 module.exports = serverlessConfiguration

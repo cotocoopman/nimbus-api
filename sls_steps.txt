@@ -1,7 +1,12 @@
+
 npm install -g serverless
 serverless create --template aws-nodejs-typescript
 
-
+'serverless-esbuild',
+    'serverless-offline',
+    'serverless-dotenv-plugin',
+    'serverless-plugin-common-excludes',
+    'serverless-middleware',
 
 
 serverless config credentials --provider aws --key AKIARI2O4RSH4LQ3MHPH --secret 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 --profile serverless-user
