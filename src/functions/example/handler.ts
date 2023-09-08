@@ -1,7 +1,7 @@
 import { formatResponse } from '@libs/api-gateway'
-import { middyfy, auth } from '@libs/lambda'
+import { authParser, publicParser } from '@libs/lambda'
 
-const hello = async (event) => {
+const example = async (event) => {
   if (event.body) {
     return formatResponse(200, {
       message: `POST Hello ${event.body.name}, welcome to the exciting Serverless world!`,
@@ -15,8 +15,11 @@ const hello = async (event) => {
   }
 }
 
-// export const main = middyfy(hello)
-export const main = auth(hello)
+// PARA METODOS PUBLICOS
+// export const main = publicParser(hello)
+
+// PARA METODOS PRIVADOS CON AUTHENTICATION PROPIA
+export const main = authParser(example)
 
 // import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway'
 // import { formatResponse } from '@libs/api-gateway'

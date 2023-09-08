@@ -4,7 +4,7 @@ const resource = {
             Type: 'AWS::Cognito::UserPool',
             Properties: {
                 MfaConfiguration: 'OFF',
-                UserPoolName: 'dev-nimbus-user-pool',
+                UserPoolName: process.env.COGNITO_USER_POOL_NAME,
                 UsernameAttributes: [
                     'email',
                 ],
@@ -12,6 +12,11 @@ const resource = {
                     'email',
                 ],
                 Schema: [
+                    {
+                        AttributeDataType: 'String',
+                        Name: 'email',
+                        Required: true,
+                    },
                     {
                         AttributeDataType: 'String',
                         Name: 'name',
@@ -54,7 +59,7 @@ const resource = {
         CognitoUserPoolClient: {
             Type: 'AWS::Cognito::UserPoolClient',
             Properties: {
-                ClientName: 'dev-nimbus-user-app-client',
+                ClientName: process.env.COGNITO_USER_POOL_CLIENT,
                 GenerateSecret: false,
                 UserPoolId: {
                     Ref: 'CognitoUserPool',

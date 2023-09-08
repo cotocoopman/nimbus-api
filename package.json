@@ -16,10 +16,14 @@
   "dependencies": {
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
+    "aws-sdk": "^2.1453.0",
+    "crypto-js": "^4.1.1",
+    "moment": "^2.29.4",
     "serverless-dotenv-plugin": "^6.0.0",
     "serverless-middleware": "^3.2.0",
     "serverless-offline": "^12.0.4",
-    "serverless-plugin-common-excludes": "^4.0.0"
+    "serverless-plugin-common-excludes": "^4.0.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",
