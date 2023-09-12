@@ -38,7 +38,7 @@ const main = async (event) => {
 
     if (res.status) {
         return formatResponse(200, {
-            message: `Usuario registrado. Verifica tu cuenta con el código que te enviamos al correo ${email}`,
+            message: `Hemos registrado tu cuenta!. Por favor verifícala con el código que te enviamos al correo ${email}`,
         })
     } else {
         return formatResponse(500, {

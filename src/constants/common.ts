@@ -1,2 +1,5 @@
 export const COMMON_DEVICE_PC = 'PC'
 export const COMMON_DEVICE_MOBILE = 'MOBILE'
+
+export const COMMON_ENABLE_USER = 'ENABLE_USER'
+export const COMMON_DISABLE_USER = 'DISABLE_USER'
