@@ -5,7 +5,7 @@ import functions from '@resources/functions'
 import cognito from '@resources/cognito'
 
 const serverlessConfiguration: AWS = {
-  service: 'serverless-template-ts',
+  service: 'nimbus-api',
   frameworkVersion: '3',
   configValidationMode: 'error',
   useDotenv: true,
